@@ -1,0 +1,14 @@
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/bin/Debug/net8.0/ConsoleAppAula01
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/bin/Debug/net8.0/ConsoleAppAula01.deps.json
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/bin/Debug/net8.0/ConsoleAppAula01.runtimeconfig.json
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/bin/Debug/net8.0/ConsoleAppAula01.dll
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/bin/Debug/net8.0/ConsoleAppAula01.pdb
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.GeneratedMSBuildEditorConfig.editorconfig
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.AssemblyInfoInputs.cache
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.AssemblyInfo.cs
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.csproj.CoreCompileInputs.cache
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.dll
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/refint/ConsoleAppAula01.dll
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.pdb
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ConsoleAppAula01.genruntimeconfig.cache
+/Users/leo/DEV/aula-prog-oo/ConsoleAppAula01/obj/Debug/net8.0/ref/ConsoleAppAula01.dll
