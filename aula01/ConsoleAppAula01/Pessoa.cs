@@ -16,6 +16,7 @@ public class Pessoa
     public String Nome;
     public String Sobrenome;
     public int Idade;
+    public String CPF;
 
     public bool Igual(Pessoa outraPessoa)
     {
