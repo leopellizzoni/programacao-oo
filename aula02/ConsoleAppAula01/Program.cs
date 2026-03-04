@@ -4,12 +4,16 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Veiculo volvo = new Veiculo("PLACA_CORRETA");
-        volvo.Marca = "Volvo";
-        volvo.Modelo = "XC90";
-        //volvo.Placa = "VOLVO-PLACA-CLONADO"; //estou usando o set / atribuindo valor
-        Console.WriteLine($"A placa é: { volvo.Placa }"); //aqui apenas lendo
-        Console.WriteLine(volvo.Descricao());
+        Funcionario joao = new Funcionario("João", "Eng. de Software", 25000);
+        Console.WriteLine("O salario liquido do joao é: " + joao.SalarioLiquido);
+
+
+        // Veiculo volvo = new Veiculo("PLACA_CORRETA");
+        // volvo.Marca = "Volvo";
+        // volvo.Modelo = "XC90";
+        // //volvo.Placa = "VOLVO-PLACA-CLONADO"; //estou usando o set / atribuindo valor
+        // Console.WriteLine($"A placa é: { volvo.Placa }"); //aqui apenas lendo
+        // Console.WriteLine(volvo.Descricao());
 
 
         // int n1 = 10;
