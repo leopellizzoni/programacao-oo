@@ -6,7 +6,7 @@ namespace ConsoleAppAula01;
 
 
 public class Pessoa
-{   
+{
     //construtor
     public Pessoa(string nome, string sobrenome, int idade)
     {
@@ -16,11 +16,10 @@ public class Pessoa
     }
 
     //propriedades
-    public String Nome;
-    public String Sobrenome;
-    public int Idade;
-
-    public String CPF;
+    public String Nome { get; set; }
+    public String Sobrenome { get; set; }
+    public int Idade { get; set; }
+    public String CPF { get; set; }
 
     public bool APessoaEhIgual(Pessoa outraPessoa)
     {
@@ -36,8 +35,8 @@ public class Pessoa
 
     public bool Igual_NaoFazer(Pessoa primeiraPessoa, Pessoa outraPessoa)
     {
-        if (primeiraPessoa.Nome == outraPessoa.Nome && 
-        primeiraPessoa.Sobrenome == outraPessoa.Sobrenome && 
+        if (primeiraPessoa.Nome == outraPessoa.Nome &&
+        primeiraPessoa.Sobrenome == outraPessoa.Sobrenome &&
         primeiraPessoa.Idade == outraPessoa.Idade)
         {
             return true;
