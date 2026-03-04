@@ -16,7 +16,22 @@ public class Pessoa
     }
 
     //propriedades
-    public String Nome { get; set; }
+    private String nome;
+    public String Nome 
+    { 
+        get
+        {
+            return nome;
+        }
+        set
+        {
+            if (value != "")
+            {
+                nome = value;
+            } 
+        } 
+    }
+
     public String Sobrenome { get; set; }
     public int Idade { get; set; }
     public String CPF { get; set; }
