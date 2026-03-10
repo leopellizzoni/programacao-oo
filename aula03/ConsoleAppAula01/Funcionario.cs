@@ -4,17 +4,16 @@ namespace ConsoleAppAula01;
 
 public class Funcionario
 {
-    public Funcionario(String nome, String cargo, decimal salarioBruto)
+    public Funcionario(String nome, decimal salarioBruto)
     {
         Nome = nome;
-        Cargo = cargo;
         SalarioBruto = salarioBruto;   
         GerarSalarioLiquido(); 
     }
 
     public String Nome { get; set; }
 
-    public String Cargo { get; set; }
+    public Cargo Dev { get; set; }
 
     public decimal SalarioBruto { get; set; }
 
