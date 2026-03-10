@@ -6,6 +6,7 @@ public class Funcionario
 {
     public Funcionario(String nome, decimal salarioBruto)
     {
+        Cargo = new CargoInfo();
         Nome = nome;
         SalarioBruto = salarioBruto;   
         GerarSalarioLiquido(); 
@@ -13,7 +14,7 @@ public class Funcionario
 
     public String Nome { get; set; }
 
-    public Cargo Dev { get; set; }
+    public CargoInfo Cargo { get; set; }
 
     public decimal SalarioBruto { get; set; }
 
@@ -45,5 +46,5 @@ public class Funcionario
         
     }
 
-    
+        
 }

@@ -5,13 +5,24 @@ internal class Program
     private static void Main(string[] args)
     {
         Funcionario joao = new Funcionario("João", 25000);
+        joao.Cargo.Codigo = 123456;
+        joao.Cargo.Descricao = "Eng. de Software";
 
-        Console.WriteLine("O salario liquido do joao é: " + joao.SalarioLiquido);
+        CargoInfo cargoProgramador = new CargoInfo();
+        cargoProgramador.Codigo = 123;
+        cargoProgramador.Descricao = "Dev";
 
         Funcionario pedro = new Funcionario("Pedro", 5000);
+        pedro.Cargo = cargoProgramador;
 
         Funcionario maria = new Funcionario("Maria", 5000);
+        maria.Cargo = cargoProgramador;
+        
+        Funcionario paulo = new Funcionario("Paulo", 14000);
+        paulo.Cargo.Codigo = 777;
+        paulo.Cargo.Descricao = "Gerente Administrativo";
 
+        Console.WriteLine("==== THE END");
 
     }
 }

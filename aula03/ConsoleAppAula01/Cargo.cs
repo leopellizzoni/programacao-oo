@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleAppAula01;
 
-public class Cargo
+public class CargoInfo
 {
     public int Codigo {get;set;}
 
