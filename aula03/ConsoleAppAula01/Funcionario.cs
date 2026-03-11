@@ -7,6 +7,8 @@ public class Funcionario
     public Funcionario(String nome, decimal salarioBruto)
     {
         Cargo = new CargoInfo();
+        //funciona mas nao é indicado
+        //Cargo.Representante = new Conselho();
         Nome = nome;
         SalarioBruto = salarioBruto;   
         GerarSalarioLiquido(); 
@@ -46,5 +48,8 @@ public class Funcionario
         
     }
 
-        
+    public String QuemEh()
+    {
+        return $"{Nome} - {Cargo.QuemEh} - R$ {SalarioBruto}";
+    }
 }
