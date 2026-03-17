@@ -4,9 +4,9 @@ namespace ConsoleAppAula01;
 
 public class Veiculo
 {
-    public Veiculo(String parametroPlaca)
+    public Veiculo()
     {
-        Placa = parametroPlaca;
+        Placa = "Não Informada";
         Marca = "Não informada";
         Modelo = "Precisa definir";
     }
