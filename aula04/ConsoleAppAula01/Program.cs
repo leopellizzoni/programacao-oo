@@ -4,8 +4,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Moto m = new Moto();
-        m.CC = 350;
+    
+
+
+        Moto minhaMoto = new Moto();
+        minhaMoto.CC = 150;
+        minhaMoto.Placa = "AAAA222";
+        minhaMoto.Modelo = "CG";
+        minhaMoto.Marca = "Honda";
 
     }
 }
