@@ -129,6 +129,14 @@ internal class Program
     //     return novoVetor;
     // }
 
+    static void Listar<TipoDoObjeto>(TipoDoObjeto[] meuVetor) where TipoDoObjeto : EntidadeComId
+    {
+        for(int i = 0; i <= meuVetor.Count(); i++)
+        {
+            Console.WriteLine($"{i + 1}) {meuVetor[i].ObterDescricao()}");
+        }
+    }
+
     static Participante[] todosParticipantes = [];
     static Palestrante[] todosPalestrantes = [];
     static Local[] todosLocais = [];
@@ -167,10 +175,13 @@ internal class Program
             }
             else if (opcao == 31)
             {
-                foreach (var item in todosPalestrantes)
-                {
-                    Console.WriteLine($"{item.Nome} - {item.Email} - {item.Telefone}");
-                }   
+                //Refatorado para usar o Listar genérico ao invés de manter 1 para cada tipo de classe
+                // foreach (var item in todosPalestrantes)
+                // {
+                //     Console.WriteLine($"{item.Nome} - {item.Email} - {item.Telefone}");
+                // }   
+
+                Listar<Palestrante>(todosPalestrantes);
             }
             else if (opcao == 40)
             {
