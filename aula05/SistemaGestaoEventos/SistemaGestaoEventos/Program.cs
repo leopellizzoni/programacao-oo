@@ -64,53 +64,70 @@ internal class Program
         return novoEvento;
     }
 
-    static Palestrante[] AdicionarPalestrante(Palestrante cliente)
+    static MeuTipo[] AdicionarNoVetor<MeuTipo>(MeuTipo novo, MeuTipo[] existentes)
     {
-        Palestrante[] novoVetor = new Palestrante[todosPalestrantes.Length + 1];
+        MeuTipo[] novoVetor = new MeuTipo[existentes.Length + 1];
 
         int cont;
 
-        for (cont = 0; cont < todosPalestrantes.Length; cont++)
+        for (cont = 0; cont < existentes.Length; cont++)
         {
-            novoVetor[cont] = todosPalestrantes[cont];
+            novoVetor[cont] = existentes[cont];
         }
 
-        novoVetor[novoVetor.Length - 1] = cliente;
+        novoVetor[novoVetor.Length - 1] = novo;
 
         return novoVetor;
     }
 
-    static Local[] AdicionarLocal(Local cliente)
-    {
-        Local[] novoVetor = new Local[todosLocais.Length + 1];
 
-        int cont;
+    // static Palestrante[] AdicionarPalestrante(Palestrante cliente)
+    // {
+    //     Palestrante[] novoVetor = new Palestrante[todosPalestrantes.Length + 1];
 
-        for (cont = 0; cont < todosLocais.Length; cont++)
-        {
-            novoVetor[cont] = todosLocais[cont];
-        }
+    //     int cont;
 
-        novoVetor[novoVetor.Length - 1] = cliente;
+    //     for (cont = 0; cont < todosPalestrantes.Length; cont++)
+    //     {
+    //         novoVetor[cont] = todosPalestrantes[cont];
+    //     }
 
-        return novoVetor;
-    }
+    //     novoVetor[novoVetor.Length - 1] = cliente;
 
-    static Evento[] AdicionarEvento(Evento evento)
-    {
-        Evento[] novoVetor = new Evento[todosEventos.Length + 1];
+    //     return novoVetor;
+    // }
 
-        int cont;
+    // static Local[] AdicionarLocal(Local cliente)
+    // {
+    //     Local[] novoVetor = new Local[todosLocais.Length + 1];
 
-        for (cont = 0; cont < todosEventos.Length; cont++)
-        {
-            novoVetor[cont] = todosEventos[cont];
-        }
+    //     int cont;
 
-        novoVetor[novoVetor.Length - 1] = evento;
+    //     for (cont = 0; cont < todosLocais.Length; cont++)
+    //     {
+    //         novoVetor[cont] = todosLocais[cont];
+    //     }
 
-        return novoVetor;
-    }
+    //     novoVetor[novoVetor.Length - 1] = cliente;
+
+    //     return novoVetor;
+    // }
+
+    // static Evento[] AdicionarEvento(Evento evento)
+    // {
+    //     Evento[] novoVetor = new Evento[todosEventos.Length + 1];
+
+    //     int cont;
+
+    //     for (cont = 0; cont < todosEventos.Length; cont++)
+    //     {
+    //         novoVetor[cont] = todosEventos[cont];
+    //     }
+
+    //     novoVetor[novoVetor.Length - 1] = evento;
+
+    //     return novoVetor;
+    // }
 
     static Participante[] todosParticipantes = [];
     static Palestrante[] todosPalestrantes = [];
@@ -137,14 +154,16 @@ internal class Program
             if (opcao == 10)
             {
                 var localNovo = CadastrarLocal();
-                todosLocais = AdicionarLocal(localNovo);
+                //todosLocais = AdicionarLocal(localNovo);
+                todosLocais = AdicionarNoVetor<Local>(localNovo, todosLocais);
             }
             else if (opcao == 30)
             {
                 //Pede para o usuario as informacoes e gera o objeto Palestrante
                 var novoPalestrante = CadastrarPalestrante();
                 //aqui esta adicionando no vetor de todosPalestrantes.
-                todosPalestrantes = AdicionarPalestrante(novoPalestrante);
+                //todosPalestrantes = AdicionarPalestrante(novoPalestrante);
+                todosPalestrantes = AdicionarNoVetor<Palestrante>(novoPalestrante, todosPalestrantes);
             }
             else if (opcao == 31)
             {
@@ -155,7 +174,8 @@ internal class Program
             }
             else if (opcao == 40)
             {
-                todosEventos = AdicionarEvento(CadastrarEvento());
+                //todosEventos = AdicionarEvento(CadastrarEvento());
+                todosEventos = AdicionarNoVetor<Evento>(CadastrarEvento(), todosEventos);
             }
 
         }while(opcao != 99);
