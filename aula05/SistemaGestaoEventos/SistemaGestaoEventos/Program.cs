@@ -1,4 +1,4 @@
-﻿using System.Net.NetworkInformation;
+﻿using System.Security.Cryptography.X509Certificates;
 using SistemaGestaoEventos;
 
 internal class Program
@@ -39,6 +39,31 @@ internal class Program
         return palestrante;
     }
 
+    public static Evento CadastrarEvento()
+    {
+        Console.WriteLine("Informe a data de inicio (Formato DD/MM/YYYY)");
+        var inicio = DateTime.Parse(Console.ReadLine());
+        Console.WriteLine("Informe a data de fim (Formato DD/MM/YYYY)");
+        var fim = DateTime.Parse(Console.ReadLine());
+
+        Console.WriteLine("Escolha um local informando o número dele");
+        
+        for(int i = 0; i <= todosLocais.Count(); i++)
+        {
+            Console.WriteLine($"{i + 1}) {todosLocais[i].ObterDescricao()}");
+        }
+        int localEscolhido = int.Parse(Console.ReadLine());
+
+        var novoEvento = new Evento();
+
+        novoEvento.Id = Guid.NewGuid().ToString();
+        novoEvento.Inicio = inicio;
+        novoEvento.Fim = fim;
+        novoEvento.Local = todosLocais[localEscolhido - 1]; //porque iniciou do 1 
+
+        return novoEvento;
+    }
+
     static Palestrante[] AdicionarPalestrante(Palestrante cliente)
     {
         Palestrante[] novoVetor = new Palestrante[todosPalestrantes.Length + 1];
@@ -54,12 +79,46 @@ internal class Program
 
         return novoVetor;
     }
+
+    static Local[] AdicionarLocal(Local cliente)
+    {
+        Local[] novoVetor = new Local[todosLocais.Length + 1];
+
+        int cont;
+
+        for (cont = 0; cont < todosLocais.Length; cont++)
+        {
+            novoVetor[cont] = todosLocais[cont];
+        }
+
+        novoVetor[novoVetor.Length - 1] = cliente;
+
+        return novoVetor;
+    }
+
+    static Evento[] AdicionarEvento(Evento evento)
+    {
+        Evento[] novoVetor = new Evento[todosEventos.Length + 1];
+
+        int cont;
+
+        for (cont = 0; cont < todosEventos.Length; cont++)
+        {
+            novoVetor[cont] = todosEventos[cont];
+        }
+
+        novoVetor[novoVetor.Length - 1] = evento;
+
+        return novoVetor;
+    }
+
     static Participante[] todosParticipantes = [];
     static Palestrante[] todosPalestrantes = [];
+    static Local[] todosLocais = [];
+    static Evento[] todosEventos = [];
 
     private static void Main(string[] args)
     {
-        Local localDoEvento;
         Evento evento;
         Palestra palestra;
 
@@ -71,12 +130,14 @@ internal class Program
             Console.WriteLine("20 - Cadastrar Participante");
             Console.WriteLine("30 - Cadastrar Palestrante");
             Console.WriteLine("31 - Listar todos os Palestrantes");
+            Console.WriteLine("40 - Cadastrar Evento");
             Console.WriteLine("99 - Sair do sistema");
             opcao = int.Parse(Console.ReadLine());
 
             if (opcao == 10)
             {
-                localDoEvento = CadastrarLocal();
+                var localNovo = CadastrarLocal();
+                todosLocais = AdicionarLocal(localNovo);
             }
             else if (opcao == 30)
             {
@@ -91,6 +152,10 @@ internal class Program
                 {
                     Console.WriteLine($"{item.Nome} - {item.Email} - {item.Telefone}");
                 }   
+            }
+            else if (opcao == 40)
+            {
+                todosEventos = AdicionarEvento(CadastrarEvento());
             }
 
         }while(opcao != 99);
