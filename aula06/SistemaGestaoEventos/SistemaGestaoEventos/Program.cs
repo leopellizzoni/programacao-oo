@@ -94,7 +94,7 @@ internal class Program
 
     //static Participante[] todosParticipantes = [];
     //static Palestrante[] todosPalestrantes = [];
-    static MeusPalestrantes palestrantes = new MeusPalestrantes();
+    //static MeusPalestrantes palestrantes = new MeusPalestrantes();
     
     //static Local[] todosLocais = [];
 
@@ -108,6 +108,7 @@ internal class Program
     {
         Evento evento;
         Palestra palestra;
+        MeusPalestrantes palestrantes = new MeusPalestrantes();
 
         Console.WriteLine("Sistema de Gestão de Eventos");
         int opcao = 0;
