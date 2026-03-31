@@ -48,10 +48,13 @@ internal class Program
 
         Console.WriteLine("Escolha um local informando o número dele");
         
-        for(int i = 0; i <= todosLocais.Count(); i++)
-        {
-            Console.WriteLine($"{i + 1}) {todosLocais[i].ObterDescricao()}");
-        }
+        // for(int i = 0; i <= todosLocais.Count(); i++)
+        // {
+        //     Console.WriteLine($"{i + 1}) {todosLocais[i].ObterDescricao()}");
+        // }
+
+        locais.Listar();
+
         int localEscolhido = int.Parse(Console.ReadLine());
 
         var novoEvento = new Evento();
@@ -59,7 +62,8 @@ internal class Program
         novoEvento.Id = Guid.NewGuid().ToString();
         novoEvento.Inicio = inicio;
         novoEvento.Fim = fim;
-        novoEvento.Local = todosLocais[localEscolhido - 1]; //porque iniciou do 1 
+        //novoEvento.Local = todosLocais[localEscolhido - 1]; //porque iniciou do 1 
+        novoEvento.Local = locais.Obter(localEscolhido - 1);
 
         return novoEvento;
     }
@@ -80,55 +84,6 @@ internal class Program
         return novoVetor;
     }
 
-
-    // static Palestrante[] AdicionarPalestrante(Palestrante cliente)
-    // {
-    //     Palestrante[] novoVetor = new Palestrante[todosPalestrantes.Length + 1];
-
-    //     int cont;
-
-    //     for (cont = 0; cont < todosPalestrantes.Length; cont++)
-    //     {
-    //         novoVetor[cont] = todosPalestrantes[cont];
-    //     }
-
-    //     novoVetor[novoVetor.Length - 1] = cliente;
-
-    //     return novoVetor;
-    // }
-
-    // static Local[] AdicionarLocal(Local cliente)
-    // {
-    //     Local[] novoVetor = new Local[todosLocais.Length + 1];
-
-    //     int cont;
-
-    //     for (cont = 0; cont < todosLocais.Length; cont++)
-    //     {
-    //         novoVetor[cont] = todosLocais[cont];
-    //     }
-
-    //     novoVetor[novoVetor.Length - 1] = cliente;
-
-    //     return novoVetor;
-    // }
-
-    // static Evento[] AdicionarEvento(Evento evento)
-    // {
-    //     Evento[] novoVetor = new Evento[todosEventos.Length + 1];
-
-    //     int cont;
-
-    //     for (cont = 0; cont < todosEventos.Length; cont++)
-    //     {
-    //         novoVetor[cont] = todosEventos[cont];
-    //     }
-
-    //     novoVetor[novoVetor.Length - 1] = evento;
-
-    //     return novoVetor;
-    // }
-
     static void Listar<TipoDoObjeto>(TipoDoObjeto[] meuVetor) where TipoDoObjeto : EntidadeComId
     {
         for(int i = 0; i <= meuVetor.Count(); i++)
@@ -139,7 +94,11 @@ internal class Program
 
     static Participante[] todosParticipantes = [];
     static Palestrante[] todosPalestrantes = [];
-    static Local[] todosLocais = [];
+    
+    //static Local[] todosLocais = [];
+
+    static MeusLocais locais = new MeusLocais();
+
     static Evento[] todosEventos = [];
 
     private static void Main(string[] args)
@@ -163,7 +122,8 @@ internal class Program
             {
                 var localNovo = CadastrarLocal();
                 //todosLocais = AdicionarLocal(localNovo);
-                todosLocais = AdicionarNoVetor<Local>(localNovo, todosLocais);
+                //todosLocais = AdicionarNoVetor<Local>(localNovo, todosLocais);
+                locais.Adicionar(localNovo);
             }
             else if (opcao == 30)
             {
