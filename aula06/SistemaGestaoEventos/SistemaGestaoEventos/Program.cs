@@ -92,14 +92,17 @@ internal class Program
         }
     }
 
-    static Participante[] todosParticipantes = [];
-    static Palestrante[] todosPalestrantes = [];
+    //static Participante[] todosParticipantes = [];
+    //static Palestrante[] todosPalestrantes = [];
+    static MeusPalestrantes palestrantes = new MeusPalestrantes();
     
     //static Local[] todosLocais = [];
 
     static MeusLocais locais = new MeusLocais();
 
-    static Evento[] todosEventos = [];
+    //static Evento[] todosEventos = [];
+
+    static MeusEventos eventos = new MeusEventos();
 
     private static void Main(string[] args)
     {
@@ -131,7 +134,8 @@ internal class Program
                 var novoPalestrante = CadastrarPalestrante();
                 //aqui esta adicionando no vetor de todosPalestrantes.
                 //todosPalestrantes = AdicionarPalestrante(novoPalestrante);
-                todosPalestrantes = AdicionarNoVetor<Palestrante>(novoPalestrante, todosPalestrantes);
+                //todosPalestrantes = AdicionarNoVetor<Palestrante>(novoPalestrante, todosPalestrantes);
+                palestrantes.Adicionar(novoPalestrante);
             }
             else if (opcao == 31)
             {
@@ -141,12 +145,15 @@ internal class Program
                 //     Console.WriteLine($"{item.Nome} - {item.Email} - {item.Telefone}");
                 // }   
 
-                Listar<Palestrante>(todosPalestrantes);
+                //Listar<Palestrante>(todosPalestrantes);
+
+                palestrantes.Listar();
             }
             else if (opcao == 40)
             {
                 //todosEventos = AdicionarEvento(CadastrarEvento());
-                todosEventos = AdicionarNoVetor<Evento>(CadastrarEvento(), todosEventos);
+                //todosEventos = AdicionarNoVetor<Evento>(CadastrarEvento(), todosEventos);
+                eventos.Adicionar(CadastrarEvento());
             }
 
         }while(opcao != 99);
