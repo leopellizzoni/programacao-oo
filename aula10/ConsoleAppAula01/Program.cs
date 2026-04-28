@@ -4,29 +4,33 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Veiculo veiculoTeste = new Moto();
-        (veiculoTeste as Moto).CC = 150;
-        veiculoTeste.Placa = "AAAA222";
-        veiculoTeste.Modelo = "CG";
-        veiculoTeste.Marca = "Honda";
-        //GERA ERRO
-        //Console.WriteLine((veiculoTeste as Caminhao).PesoTotalParaTransporte);
+        // try
+        // {
+        //     Console.Write("Informe um numero: ");
+        //     int numero = int.Parse(Console.ReadLine());
 
-        Veiculo meuCaminhao = new Caminhao();
-        (meuCaminhao as Caminhao).PesoTotalParaTransporte = 150;
-        meuCaminhao.Placa = "AAAA2122";
-        meuCaminhao.Modelo = "XX2";
-        meuCaminhao.Marca = "Volvo";
-        Console.WriteLine((meuCaminhao as Caminhao).PesoTotalParaTransporte);
-        
-        Gerente g = new Gerente();
-        g.VeiculoDoFuncionario = new Carro();
+        //     if (numero % 2 == 0)
+        //     {
+        //         Console.WriteLine("Par");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Impar");
+        //     }
+        // }
+        // catch (Exception e)
+        // {
+        //     Console.WriteLine("Por favor, informe um número");
+        // }
+        // finally
+        // {
+        //     Console.WriteLine("Executou o Finally");
+        // }
 
-        Motorista m = new Motorista();
-        m.VeiculoDoFuncionario = new Caminhao();
-
-        OfficeBoy boy = new OfficeBoy();
-        boy.VeiculoDoFuncionario = new Moto();
+        // Console.Write("Informe um texto: ");
+        // String texto = Console.ReadLine();
+        // throw new Exception();
+        // Console.WriteLine($"Seu texto é: {texto}");
 
     }
 }
