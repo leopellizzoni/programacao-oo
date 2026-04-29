@@ -55,6 +55,18 @@ public class Pessoa
         }
     }
 
+    public String PodeBeber()
+    {
+        if (EhMaiorDeIdade())
+        {
+            return $"{Nome}: Pode beber - desde que moderadamente";
+        }
+        else
+        {
+            return $"{Nome}: Não pode beber";
+        }
+    }
+
     public bool EhMaiorDeIdade()
     {
         if (Idade >= 18)
