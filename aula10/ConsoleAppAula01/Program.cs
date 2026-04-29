@@ -58,17 +58,27 @@ internal class Program
             Console.WriteLine("===========================");
         }
 
-        Pessoa p1 = new Pessoa();
-        p1.Nome = "Leonardo";
-        p1.Idade = 17;
-        Console.WriteLine(p1.PodeBeber());
+        //Gera o erro mesmo que a exception foi criada (via classe) e instanciada (via new) por nos.
+        // Pessoa p1 = new Pessoa();
+        // p1.Nome = "Leonardo";
+        // p1.Idade = 17;
+        // Console.WriteLine(p1.PodeBeber());
 
-        ServicoDePessoa servico1 = new ServicoDePessoa();
-        if (servico1.Processar(p1))
+        // ServicoDePessoa servico1 = new ServicoDePessoa();
+        // if (servico1.Processar(p1))
+        // {
+        //     //------Envio avisos por email avisando que foi processado
+        //     //------Envio SMS avisando que foi processado
+        //     // 
+        // }
+
+        try
         {
-            //------Envio avisos por email avisando que foi processado
-            //------Envio SMS avisando que foi processado
-            // 
+            int.Parse("noventa");
+        }
+        catch (Exception ex)
+        {
+           throw new ExcecaoDeRegraDoSistema("Ocorreu um erro", ex);
         }
     }
 }

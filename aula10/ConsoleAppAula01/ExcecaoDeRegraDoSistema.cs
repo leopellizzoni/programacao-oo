@@ -8,4 +8,9 @@ public class ExcecaoDeRegraDoSistema : Exception
     {
         
     }
+
+    public ExcecaoDeRegraDoSistema(String mensagem, Exception ex) : base(mensagem, ex)
+    {
+        
+    }
 }
