@@ -2,25 +2,25 @@ using System;
 
 namespace ConsoleAppAula01.ProblemaRestaurante;
 
-public class MenuPT_BR : IMenu
+public class MenuES : IMenu
 {
     public string Prato01()
     {
-        return "Arroz e feijão";
+        return "Arroz y frijoles";
     }
 
     public string Prato02()
     {
-       return "Batata assada";
+        return "Patatas asadas";
     }
 
     public string Prato03()
     {
-       return "Lasanha";
+       return "Lasaña";
     }
 
     public string SaudacaoInicial()
     {
-        return "Olá, Bem Vindo :)";
+        return "Hola, bienvenido :)";
     }
 }

@@ -1,32 +1,28 @@
 ﻿using ConsoleAppAula01;
+using ConsoleAppAula01.ProblemaRestaurante;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Veiculo veiculoTeste = new Moto();
-        (veiculoTeste as Moto).CC = 150;
-        veiculoTeste.Placa = "AAAA222";
-        veiculoTeste.Modelo = "CG";
-        veiculoTeste.Marca = "Honda";
-        //GERA ERRO
-        //Console.WriteLine((veiculoTeste as Caminhao).PesoTotalParaTransporte);
+        Console.WriteLine("Digite 1  para Português (PT-BR)");
+        Console.WriteLine("Teclea el 2 para Español (ES)");
 
-        Veiculo meuCaminhao = new Caminhao();
-        (meuCaminhao as Caminhao).PesoTotalParaTransporte = 150;
-        meuCaminhao.Placa = "AAAA2122";
-        meuCaminhao.Modelo = "XX2";
-        meuCaminhao.Marca = "Volvo";
-        Console.WriteLine((meuCaminhao as Caminhao).PesoTotalParaTransporte);
-        
-        Gerente g = new Gerente();
-        g.VeiculoDoFuncionario = new Carro();
+        int opMenu = int.Parse(Console.ReadLine());
+        IMenu menu;
 
-        Motorista m = new Motorista();
-        m.VeiculoDoFuncionario = new Caminhao();
+        if (opMenu == 1)
+        {
+            menu = new MenuPT_BR();
+        }
+        else
+        {
+            menu = new MenuES();
+        }
 
-        OfficeBoy boy = new OfficeBoy();
-        boy.VeiculoDoFuncionario = new Moto();
-
+        Console.WriteLine(menu.SaudacaoInicial());
+        Console.WriteLine(menu.Prato01());
+        Console.WriteLine(menu.Prato02());
+        Console.WriteLine(menu.Prato03());
     }
 }
