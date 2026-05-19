@@ -120,6 +120,29 @@ internal class Program
             Console.WriteLine("31 - Listar todos os Palestrantes");
             Console.WriteLine("40 - Cadastrar Evento");
             Console.WriteLine("99 - Sair do sistema");
+
+
+            /*
+            Ingles
+            Event Management System
+            Register Venue
+            Register Participant
+            Register Speaker
+            List All Speakers
+            Register Event
+            Log Out
+            */
+
+            /*Espanhol
+            Sistema de gestión de eventos
+            Registrar sede
+            Registrar participante
+            Registrar ponente
+            Ver lista de ponentes
+            Registrar evento
+            Cerrar sesión
+            */
+
             opcao = int.Parse(Console.ReadLine());
 
             if (opcao == 10)
