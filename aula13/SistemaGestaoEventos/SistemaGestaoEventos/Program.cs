@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using SistemaGestaoEventos;
+using SistemaGestaoEventos.i18n;
 
 internal class Program
 {
@@ -106,6 +107,10 @@ internal class Program
 
     private static void Main(string[] args)
     {
+        IMenu menu;
+
+        menu = new MenuPT_BR();
+
         Evento evento;
         Palestra palestra;
         MeusPalestrantes palestrantes = new MeusPalestrantes();
@@ -114,13 +119,15 @@ internal class Program
         int opcao = 0;
         do
         {
-            Console.WriteLine("10 - Cadastrar Local");
-            Console.WriteLine("20 - Cadastrar Participante");
+            Console.WriteLine(menu.CadastrarLocal());
+            Console.WriteLine(menu.CadastrarParticipante());
             Console.WriteLine("30 - Cadastrar Palestrante");
             Console.WriteLine("31 - Listar todos os Palestrantes");
             Console.WriteLine("40 - Cadastrar Evento");
             Console.WriteLine("99 - Sair do sistema");
-
+            Console.WriteLine("100 - Trocar o Idioma para Ingles");
+            Console.WriteLine("101 - Trocar o Idioma para Portugues");
+            Console.WriteLine("102 - Informar Idioma");
 
             /*
             Ingles
@@ -178,6 +185,18 @@ internal class Program
                 //todosEventos = AdicionarEvento(CadastrarEvento());
                 //todosEventos = AdicionarNoVetor<Evento>(CadastrarEvento(), todosEventos);
                 eventos.Adicionar(CadastrarEvento());
+            }
+            else if (opcao == 100)
+            {
+                menu = new Menu_EN();
+            }
+            else if (opcao == 101)
+            {
+                menu = new MenuPT_BR();
+            }
+            else if (opcao == 102)
+            {
+                Console.WriteLine($"Esta em uso o idioma {menu.ObterIdioma()}");
             }
 
         }while(opcao != 99);
