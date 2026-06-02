@@ -4,8 +4,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        new RelatorioDePedidos().ObterPorPeriodo(DateTime.Now, DateTime.Now);
-        new RelatorioDePedidos().ObterPorPeriodoParaArquivo(DateTime.Now, DateTime.Now);
+        //new RelatorioDePedidos().ObterPorPeriodo(DateTime.Now, DateTime.Now);
+        //new RelatorioDePedidos().ObterPorPeriodoParaArquivo(DateTime.Now, DateTime.Now);
 
         // try
         // {
