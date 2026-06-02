@@ -4,6 +4,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        new RelatorioDePedidos().ObterPorPeriodo(DateTime.Now, DateTime.Now);
+        new RelatorioDePedidos().ObterPorPeriodoParaArquivo(DateTime.Now, DateTime.Now);
+
         // try
         // {
         //     Console.Write("Informe um numero: ");
@@ -32,31 +35,31 @@ internal class Program
         // throw new Exception();
         // Console.WriteLine($"Seu texto é: {texto}");
 
-        try
-        {
-            Pessoa p = new Pessoa();
-            p.Nome = "Leonardo";
-            p.Idade = 17;
-            Console.WriteLine(p.PodeBeber());
+        // try
+        // {
+        //     Pessoa p = new Pessoa();
+        //     p.Nome = "Leonardo";
+        //     p.Idade = 17;
+        //     Console.WriteLine(p.PodeBeber());
 
-            ServicoDePessoa servico = new ServicoDePessoa();
-            if (servico.Processar(p))
-            {
-                //------Envio avisos por email avisando que foi processado
-                //------Envio SMS avisando que foi processado
-                // 
-            }
-        }
-        catch (ExcecaoDeRegraDoSistema erroDeSistema)
-        {
-            Console.WriteLine(erroDeSistema.Message);
-        }
-        catch (Exception minhaVariavelErro)
-        {
-            Console.WriteLine("===========================");
-            Console.WriteLine(minhaVariavelErro.Message);
-            Console.WriteLine("===========================");
-        }
+        //     ServicoDePessoa servico = new ServicoDePessoa();
+        //     if (servico.Processar(p))
+        //     {
+        //         //------Envio avisos por email avisando que foi processado
+        //         //------Envio SMS avisando que foi processado
+        //         // 
+        //     }
+        // }
+        // catch (ExcecaoDeRegraDoSistema erroDeSistema)
+        // {
+        //     Console.WriteLine(erroDeSistema.Message);
+        // }
+        // catch (Exception minhaVariavelErro)
+        // {
+        //     Console.WriteLine("===========================");
+        //     Console.WriteLine(minhaVariavelErro.Message);
+        //     Console.WriteLine("===========================");
+        // }
 
         //Gera o erro mesmo que a exception foi criada (via classe) e instanciada (via new) por nos.
         // Pessoa p1 = new Pessoa();
@@ -72,13 +75,13 @@ internal class Program
         //     // 
         // }
 
-        try
-        {
-            int.Parse("noventa");
-        }
-        catch (Exception ex)
-        {
-           throw new ExcecaoDeRegraDoSistema("Ocorreu um erro", ex);
-        }
+        // try
+        // {
+        //     int.Parse("noventa");
+        // }
+        // catch (Exception ex)
+        // {
+        //    throw new ExcecaoDeRegraDoSistema("Ocorreu um erro", ex);
+        // }
     }
 }
